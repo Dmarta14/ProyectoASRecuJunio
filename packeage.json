@@ -1,0 +1,14 @@
+{
+    "name": "proyectoas2324cliente",
+    "version": "1.0.0",
+    "description": "Proyecto AS 2023/2024 - Cliente",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "author": "Diego Marta Hurtado",
+    "license": "ISC"
+  }

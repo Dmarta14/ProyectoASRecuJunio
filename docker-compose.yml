@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  db-mysql:
+    container_name: db-mysql
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    ports:
+      - "3033:3306"
+    volumes:
+      - mysql-db-data:/var/lib/mysql
+    networks:
+      - backend
+
+  adminer:
+    container_name: adminer
+    image: adminer:latest
+    depends_on:
+      - db-mysql
+    ports:
+      - "8077:8080"
+    networks:
+      - backend
+
+  restaurante:
+    container_name: restaurante
+    build:
+      context: .
+      dockerfile: Dockerfile-restaurante
+    depends_on:
+      - db-mysql
+    networks:
+      - backend
+
+  web-php:
+    container_name: web
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    environment:
+      - ALLOW_OVERRIDE=true
+    ports:
+      - "82:80"
+    volumes:
+      - ./public/web-php:/var/www/html
+    depends_on:
+      - db-mysql
+    networks:
+      - frontend
+      - backend
+volumes:
+  mysql-db-data:
+networks:
+  frontend:
+  backend:

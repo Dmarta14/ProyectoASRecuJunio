@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurante-d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurante-d
+  template:
+    metadata:
+      labels:
+        app: restaurante-d
+    spec:
+      containers:
+      - name: restaurante-p
+        image: dmarta14/restaurante:latest
+        

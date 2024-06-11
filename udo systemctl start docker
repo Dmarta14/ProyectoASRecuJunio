@@ -1,0 +1,21 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Tue 2024-06-11 02:21:39 CEST; 7h ago
+TriggeredBy: [0;1;32m●[0m docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 1708063 (dockerd)
+      Tasks: 20
+     Memory: 519.7M
+     CGroup: /system.slice/docker.service
+             └─1708063 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+jun 11 09:29:02 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:29:02.123894067+02:00" level=error msg="attach failed with error: error attaching stderr stream: write unix /run/docker.sock->@: write: broken pipe"
+jun 11 09:33:25 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:33:25.875649785+02:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+jun 11 09:33:25 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:33:25.876803242+02:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+jun 11 09:33:25 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:33:25.928580870+02:00" level=info msg="No non-localhost DNS nameservers are left in resolv.conf. Using default external servers"
+jun 11 09:34:26 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:34:26.154889669+02:00" level=info msg="ignoring event" container=9f5039f22e26a10e5690baf0f4c5e7025615f055484ce660a596ba491bf45335 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+jun 11 09:49:50 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:49:50.873969357+02:00" level=info msg="ignoring event" container=ff029755665351af577421017fee9d778b3edb813e11d832992a546da37adf6f module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+jun 11 09:49:50 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:49:50.880644779+02:00" level=error msg="attach failed with error: error attaching stderr stream: write unix /run/docker.sock->@: write: broken pipe"
+jun 11 09:49:51 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:49:51.880278400+02:00" level=info msg="ignoring event" container=0291fe4715f9f2f7af75f20dc1464c4804f45d84e9c65e5921dd34d70c514186 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+jun 11 09:49:52 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:49:52.237995405+02:00" level=info msg="ignoring event" container=90e9fd9bd52ec68f6b1351490b2d8e40e2c4cf2eb2d35214959c0a7d48720314 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+jun 11 09:49:52 dmarta14-GF63-Thin-10SCXR dockerd[1708063]: time="2024-06-11T09:49:52.244052022+02:00" level=error msg="attach failed with error: error attaching stderr stream: write unix /run/docker.sock->@: write: broken pipe"

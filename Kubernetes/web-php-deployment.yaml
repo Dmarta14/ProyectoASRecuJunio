@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-php-d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-php-d
+  template:
+    metadata:
+      labels:
+        app: web-php-d
+    spec:
+      volumes:
+      - name: web-php-volume
+        persistentVolumeClaim:
+          claimName: web-php-rvolume
+      containers:
+      - name: web-php-p
+        image: dmarta14/web:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html/image
+          name: web-php-volume

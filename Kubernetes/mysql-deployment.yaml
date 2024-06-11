@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-d
+  template:
+    metadata:
+      labels:
+        app: mysql-d
+    spec:
+      volumes:
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: mysql-rvolume
+      containers:
+      - name: mysql-p
+        image: dmarta14/db-mysql:latest
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysql-volume
+          

@@ -1,0 +1,14 @@
+FROM mysql:latest
+
+# Variables de entorno
+ENV MYSQL_ROOT_PASSWORD=736dn2nc23!!vdfvisg8rhAAsas
+ENV MYSQL_DATABASE=RestauranteDiegoMarta
+ENV MYSQL_USER=DiegoMartaAS
+ENV MYSQL_PASSWORD=@nOOD23dwdjk92@dmos!mcidcndsdc
+
+
+# Copiar la base de datos a la carpeta de inicialización
+COPY ./public/database/database.sql /docker-entrypoint-initdb.d/
+
+HEALTHCHECK --interval=15s --timeout=5s --retries=3 \
+  CMD mysqladmin ping -h 127.0.0.1 -u DiegoMartaAS --password=@nOOD23dwdjk92@dmos!mcidcndsdc || exit 1
